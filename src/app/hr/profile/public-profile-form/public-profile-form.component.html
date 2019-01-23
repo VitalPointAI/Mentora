@@ -1,0 +1,33 @@
+<button mat-button id="openProfile" (click)="getProfile(this.publicProfileModel.currentAccount)">Open Profile</button>
+
+
+<div class="ui four column doubling stackable grid container">
+    <div class="six wide column">
+        <div class="ui fluid raised card">
+                <div class="image">
+                        <img [src]="this.publicProfileModel.image">
+                      </div>
+            <div class="content">
+              <div class="header fluid">{{ publicProfileModel.name }}<i class="edit icon float right" (click)="this.clicked = !this.clicked"></i></div>
+              <div *ngIf="clicked">
+                <div class="ui left corner labeled input">   
+                    <input type="text" matInput id="editName" placeholder="Update Name" (change)="updateName($event)">
+                    <div class="ui left corner label"><i class="asterisk icon"></i></div>
+                </div>
+                <button class="ui primary button" (click)="setPublicProfile('name', this.publicProfileModel.name)">Save</button>
+              </div> 
+              <div class="meta"><div class="left floated ">
+                    <i class="ethereum icon"></i>
+                  </div>
+                  {{publicProfileModel.currentAccount  | slice:0:15}}...</div>
+            </div>
+            <div class="extra content">
+                <h5>Confidence Level</h5>
+            </div>
+        </div>
+    </div>
+<div class="ten wide column">
+    <app-course-list></app-course-list>
+            <app-attestation-list></app-attestation-list>   
+</div>
+

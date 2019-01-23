@@ -1,0 +1,21 @@
+  
+<mat-card>
+    <mat-card-content>     
+      <mat-form-field>
+        <input type="number" matInput id="positionNumber" placeholder="Enter Position Number" (change)="setPositionNumber($event)">
+      </mat-form-field>
+      <button mat-button id="send" (click)="getOwnerOfPosition(positionModel.positionNumber)">Get Owner</button>
+    </mat-card-content>
+</mat-card>
+<div class="ui cards">
+    <div class="card" *ngFor="">
+        <div class="content">
+        <div class="header">{{ positionModel.positionNumber }}</div>
+        <div class="meta">{{ ownerOf }}</div>
+        <div class="description">
+            
+        </div>
+        </div>
+    </div>
+</div>
+    

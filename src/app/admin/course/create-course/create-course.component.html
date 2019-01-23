@@ -1,0 +1,15 @@
+<div class="ui form">
+        <div class="fields">
+          <div class="field">
+            <label>Course Title</label>
+            <input type="text" placeholder="Course Title" id="courseTitle" (change)="setCourseTitle($event)">
+          </div>
+        </div>
+        <div class="fields">
+            <div class="field">
+                <label>Course Description</label>
+                <textarea type="text" placeholder="Course Description" id="courseDescription" (change)="setCourseDescription($event)"></textarea>
+            </div>
+        </div>
+        <button class="positive ui button" id="createCourse" (click)="createCourse(this.courseModel.courseTitle, this.courseModel.courseDescription)">Create Course</button>    
+</div>

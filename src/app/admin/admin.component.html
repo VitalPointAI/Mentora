@@ -1,0 +1,24 @@
+<h1>Position Administration</h1>
+<h3>Total Number of {{ name }}s ({{ symbol }} ): {{ totalSupply }}</h3>
+<h4>The current account is: {{ currentAccount }} and it has {{ balanceOf }} {{ name }}s</h4>
+<app-create-position></app-create-position>
+<app-position-owner></app-position-owner>
+<div class="ui cards">
+        <div class="card" *ngFor="let event of events">
+            <div class="content">
+            <div class="header">{{ event.returnValues[0] }}</div>
+            <div class="meta"></div>
+            <div class="description">
+                    {{ event.returnValues[1] }}
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <app-attestation-interface></app-attestation-interface>
+
+    <app-create-course></app-create-course>
+        
+
+
+

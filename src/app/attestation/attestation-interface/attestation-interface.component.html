@@ -1,0 +1,16 @@
+
+  <mat-toolbar color="primary">Qualification Interface</mat-toolbar>
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field>
+        <input type="text" matInput id="attesteeId" placeholder="Employee Account" (change)="setAttesteeId($event)">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput id="attestationId" placeholder="Qualification" (change)="setAttestationId($event)">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput id="attestationDataHash" placeholder="Qualification Data Hash" (change)="setAttestationDataHash($event)">
+      </mat-form-field>
+      <button mat-button id="send" (click)="addAttestation(attestationModel.attesteeId, attestationModel.attestationId, attestationModel.attestationDataHash)">Add Qualification</button>
+    </mat-card-content>
+  </mat-card>

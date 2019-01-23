@@ -1,0 +1,14 @@
+
+  
+  <mat-card>
+    
+    <mat-card-content>     
+      <mat-form-field>
+        <input type="number" matInput id="positionNumber" placeholder="Enter Position Number" (change)="setPositionNumber($event)">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput id="positionOwner" placeholder="Enter Position Owner" (change)="setPositionOwner($event)">
+      </mat-form-field>
+      <button mat-button id="send" (click)="createPosition(positionModel.positionNumber, positionModel.positionOwner)">Create Position</button>
+    </mat-card-content>
+  </mat-card>
