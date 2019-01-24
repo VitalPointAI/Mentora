@@ -6,8 +6,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 @Injectable()
 
 export class DataService {
-
-    static readonly endpoint = 'https://ipfs.infura.io/ipfs/';
+    
     static readonly httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json'

@@ -1,28 +1,28 @@
 import {Component, OnInit, Inject} from '@angular/core';
-import { Web3Service } from '../../../util/web3.service';
+import { Web3Service } from '../../../../util/web3.service';
 import { MatSnackBar } from '@angular/material';
-import { DataService } from '../../../util/data.service';
-import { WEB3 } from './../../../web3';
-
+import { DataService } from '../../../../util/data.service';
+import { WEB3 } from './../../../../web3';
+import { ActivatedRoute } from '@angular/router';
 
 declare let require: any;
-const course_artifacts = require('./../../../../../build/contracts/Course.json');
+const course_artifacts = require('./../../../../../../build/contracts/Course.json');
 
 const ipfsAPI = require('ipfs-http-client');
 const ipfs = ipfsAPI('localhost', '5001');
 
 @Component({
-  selector: 'app-course-list',
-  templateUrl: './course-list.component.html',
-  styleUrls: ['./course-list.component.css']
+  selector: 'app-mentor-course-list',
+  templateUrl: './mentor-course-list.component.html',
+  styleUrls: ['./mentor-course-list.component.css']
 })
-export class CourseListComponent implements OnInit {
+export class MentorCourseListComponent implements OnInit {
 
     courses:any;
     deployedContract:any;
     deployed:any;
 
-    courseModel = {
+    courseMentorModel = {
         courseTitle: '',
         courseDescription: '',
         courseNumber: 0,
@@ -41,10 +41,12 @@ export class CourseListComponent implements OnInit {
     constructor(@Inject(WEB3) private web3,
         private web3Service: Web3Service,
         private matSnackBar: MatSnackBar,
-        private dataService: DataService
+        private dataService: DataService,
+        private route: ActivatedRoute
     ) { }  
 
     ngOnInit() {
+        this.currentAccount = this.route.snapshot.paramMap.get('id');
         console.log(this);
         //Connect with IPFS node
         ipfs.id(function(err, res) {
@@ -86,8 +88,7 @@ export class CourseListComponent implements OnInit {
 
     async getUserCourses()
     {
-        const accounts = await this.web3.eth.getAccounts();
-        this.currentAccount = accounts[0];
+        
         console.log(this.currentAccount);
        
         if(!this.courses) {

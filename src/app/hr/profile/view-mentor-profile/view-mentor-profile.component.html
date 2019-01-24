@@ -1,0 +1,27 @@
+<button mat-button id="openProfile" (click)="getProfile(this.publicProfileModel.currentAccount)">Open Profile</button>
+
+
+profile detail component
+<div class="ui four column doubling stackable grid container">
+    <div class="six wide column">
+        <div class="ui fluid raised card">
+                <div class="image">
+                        <img [src]="this.publicDetailProfileModel.image">
+                      </div>
+            <div class="content">
+              <div class="header fluid">{{ publicDetailProfileModel.name }}</div>
+              
+              <div class="meta"><div class="left floated ">
+                    <i class="ethereum icon"></i>
+                  </div>
+                  {{publicDetailProfileModel.currentAccount  | slice:0:15}}...</div>
+            </div>
+            <div class="extra content">
+                <h5>Confidence Level</h5>
+            </div>
+        </div>
+    </div>
+<div class="ten wide column">
+    <app-mentor-course-list></app-mentor-course-list>
+            <app-attestation-list></app-attestation-list>   
+</div>

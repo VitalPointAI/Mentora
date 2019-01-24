@@ -1,9 +1,9 @@
-import {Component, OnInit, Inject} from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Web3Service } from '../../../util/web3.service';
 import { MatSnackBar } from '@angular/material';
 import { DataService } from '../../../util/data.service';
 import { WEB3 } from './../../../web3';
-
+import { Router } from '@angular/router';
 
 declare let require: any;
 const course_artifacts = require('./../../../../../build/contracts/Course.json');
@@ -12,11 +12,11 @@ const ipfsAPI = require('ipfs-http-client');
 const ipfs = ipfsAPI('localhost', '5001');
 
 @Component({
-  selector: 'app-course-list',
-  templateUrl: './course-list.component.html',
-  styleUrls: ['./course-list.component.css']
+  selector: 'app-courses-dashboard',
+  templateUrl: './courses-dashboard.component.html',
+  styleUrls: ['./courses-dashboard.component.css']
 })
-export class CourseListComponent implements OnInit {
+export class CoursesDashboardComponent implements OnInit {
 
     courses:any;
     deployedContract:any;
@@ -30,7 +30,7 @@ export class CourseListComponent implements OnInit {
         courseInfoUrl: ''
     }
 
-    events: any = [];
+    allCourses: any = [];
     accounts: any;
     results:[];
     currentAccount: string;
@@ -41,7 +41,8 @@ export class CourseListComponent implements OnInit {
     constructor(@Inject(WEB3) private web3,
         private web3Service: Web3Service,
         private matSnackBar: MatSnackBar,
-        private dataService: DataService
+        private dataService: DataService,
+        private router: Router
     ) { }  
 
     ngOnInit() {
@@ -65,6 +66,10 @@ export class CourseListComponent implements OnInit {
       });
       setInterval(() => this.getInfo(), 50000);
     }
+    onSelect(item){
+        console.log(item.courseOwner);
+        this.router.navigate(['/profile', item.courseOwner]);
+    }
 
     getData(hash) {
         this.data = [];
@@ -76,15 +81,23 @@ export class CourseListComponent implements OnInit {
         });
     }
 
+    
+
     async getInfo() {
-        await this.getUserCourses();  
+        await this.getAllCourses();  
     }
 
     setStatus(status) {
         this.matSnackBar.open(status, null, {duration: 4000});
     }
 
-    async getUserCourses()
+    async deployContract() {
+        let deployed;
+        deployed = await this.courses.deployed();
+        return deployed;
+    }
+
+    async getAllCourses()
     {
         const accounts = await this.web3.eth.getAccounts();
         this.currentAccount = accounts[0];
@@ -95,14 +108,12 @@ export class CourseListComponent implements OnInit {
             return;
         }
 
-        console.log('Retrieving Courses');
+        console.log('Retrieving All Courses');
        
-        this.setStatus('Initiating Courses Retrieval... (please wait)');
-     
-        const deployedCourses = await this.courses.deployed();
-        
-        this.results = await deployedCourses.getPastEvents('CourseAdded', {
-            filter: {courseOwner: this.currentAccount},
+        this.setStatus('Initiating All Courses Retrieval... (please wait)');
+        let deployed = await this.deployContract();
+        this.results = await deployed.getPastEvents('CourseAdded', {
+            filter: {},
             fromBlock: 0,
             toBlock: 'latest'
         },function(error, events){
@@ -117,20 +128,6 @@ export class CourseListComponent implements OnInit {
         console.log(this.results[i]['returnValues'][2]);
         await this.getData(this.results[i]['returnValues'][2]);
         }
-      //  console.log(receivedData);
-        console.log(this.data);
-      //  console.log(this.events);
-       //let receivedData=[];
-       // let hash = this.events.returnValues[2];
-       // this.getData(hash);
-       //receivedData.push(await this.getData(this.events));
-       
-        
-        
-       // let courseUrl = this.events[0].returnValues[2];
-      //  console.log(courseUrl);
-        
-        
-        
+        console.log(this.data);        
     }
 }

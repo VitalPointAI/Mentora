@@ -1,0 +1,30 @@
+<div class="ui very padded centered grid">
+        <div class="ui link cards">
+        
+            <div class="card" *ngFor="let item of this.data" (click)="onSelect(item)">
+                <div class="image">
+                    <img src="/assets/eth.png">
+                </div>
+                <div class="content">
+                    <div class="header">{{ item.courseTitle }}</div>
+                    <div class="meta">
+                            <a routerLink="/profile/{{ item.courseOwner }}">
+                                {{ item.course3BoxName }}
+                            </a>
+                    </div>
+                    <div class="description">
+                    {{ item.courseDescription }}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                    Joined in 2013
+                    </span>
+                    <span>
+                    <i class="user icon"></i>
+                    75 Friends
+                    </span>
+                </div>
+            </div>
+        </div>
+</div>

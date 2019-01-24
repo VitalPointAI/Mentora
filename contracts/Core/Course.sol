@@ -14,10 +14,13 @@ contract Course is ERC721Metadata, ERC721Full, ERC721Mintable   {
     public {
        
     }
+    // defines mapping to track the addresses of all mentors (people who have created courses)
+    mapping(uint256=>address) public mentors;
 
     /// EVENTS
 
     event CourseAdded(address indexed courseOwner, uint256 indexed courseNumber, string courseInformation);
+
 
    
     function mintWithCourseUri(address _to, uint256 _tokenId, string calldata _tokenURI) external onlyMinter returns (bool) {

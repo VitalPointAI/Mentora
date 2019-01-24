@@ -27,6 +27,9 @@ import { PositionOwnerComponent } from './admin/positions/position-owner/positio
 import { CreateCourseComponent } from './admin/course/create-course/create-course.component';
 import { CourseListComponent } from './hr/profile/course-list/course-list.component';
 import { DataService } from './util/data.service';
+import { CoursesDashboardComponent } from './hr/training/courses-dashboard/courses-dashboard.component';
+import { ViewMentorProfileComponent } from './hr/profile/view-mentor-profile/view-mentor-profile.component';
+import { MentorCourseListComponent } from './hr/profile/view-mentor-profile/mentor-course-list/mentor-course-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { DataService } from './util/data.service';
     CreatePositionComponent,
     PositionOwnerComponent,
     CreateCourseComponent,
-    CourseListComponent
+    CourseListComponent,
+    CoursesDashboardComponent,
+    ViewMentorProfileComponent,
+    MentorCourseListComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,7 +1,7 @@
 import {Component, OnInit, Inject} from '@angular/core';
 import {Web3Service} from './../../../util/web3.service';
 import { WEB3 } from './../../../web3';
-
+import { ThreeBox } from './../../../3box/3box.service';
 
 declare let require: any;
 const course_artifacts = require('./../../../../../build/contracts/Course.json');
@@ -25,13 +25,16 @@ export class CreateCourseComponent implements OnInit {
         courseDescription: '',
         courseNumber: 0,
         courseOwner: '',
-        courseInfoUrl: ''
+        courseInfoUrl: '',
+        course3BoxName: ''
     }
 
     currentAccount: any;
 
     constructor(@Inject(WEB3) private web3,
-        private web3Service: Web3Service) { }
+        private web3Service: Web3Service,
+        private threeBoxService: ThreeBox
+    ) { }
 
     ngOnInit() {
         console.log(this);
@@ -55,18 +58,28 @@ export class CreateCourseComponent implements OnInit {
     }
 
     async createCourse(courseTitle, courseDescription) {
+       const accounts = await this.web3.eth.getAccounts();
+       this.currentAccount = accounts[0];
+       this.courseModel.courseOwner = this.currentAccount.toString();
        this.courseModel.courseTitle = courseTitle;
        console.log(this.courseModel.courseTitle);
        this.courseModel.courseDescription = courseDescription;
        console.log(this.courseModel.courseDescription);
-       this.courseModel.courseInfoUrl = await this.createCourseInfoUrl(this.courseModel.courseTitle, this.courseModel.courseDescription);
+       this.courseModel.course3BoxName = await this.get3BoxName(this.courseModel.courseOwner);
+       this.courseModel.courseInfoUrl = await this.createCourseInfoUrl(
+           this.courseModel.courseTitle, 
+           this.courseModel.courseDescription, 
+           this.courseModel.courseOwner, 
+           this.courseModel.course3BoxName
+        );
         console.log(this.courseModel.courseInfoUrl);        
         this.courseAddition();
         
     }
 
     async courseAddition(){
-        this.currentAccount = this.web3Service.currentAcc;
+        const accounts = await this.web3.eth.getAccounts();
+        this.currentAccount = accounts[0];
         console.log(this.currentAccount);
         this.courseModel.courseOwner = this.currentAccount.toString();
         console.log(this.courseModel.courseOwner);
@@ -79,16 +92,24 @@ export class CreateCourseComponent implements OnInit {
         console.log(courseAddition);
     }
 
+    async get3BoxName(address) {
+        const box = await this.threeBoxService.openBox(address, this.web3.currentProvider);
+        let result = await this.threeBoxService.box.public.get('name');
+        return result;
+    }
+
     async deployContract() {
         let deployed;
         deployed = await this.courses.deployed();
         return deployed;
     }
 
-    async createCourseInfoUrl(courseTitle, courseDescription):Promise<string> {
+    async createCourseInfoUrl(courseTitle, courseDescription, courseOwner, course3BoxName):Promise<string> {
         var courseJson = {
             courseTitle: courseTitle,
-            courseDescription: courseDescription
+            courseDescription: courseDescription,
+            courseOwner: courseOwner,
+            course3BoxName: course3BoxName
         }
         console.log(courseJson);
         let content = ipfs.types.Buffer.from(JSON.stringify(courseJson));
