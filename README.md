@@ -41,6 +41,8 @@ Using IPFS, Mentora eliminates the need to store data on a central server.  The 
 
 ## Getting Started (Setting Up for Evaluation)
 
+### WARNING: Mentora is not yet encrypting content data being stored on IPFS.  Do not add anything you potentially do not want other people to see.
+
 ### Running from localhost
 1.  Clone the repo to a project folder on your computer
 2.  Run `npm install` from that project folder
@@ -65,7 +67,7 @@ If you like what Mentora is up to and want to help speed up development...
 
 **send some Eth: 0x7f7c65C084d6F6B7463AfF0e36a816567b378230**
 
-Thanks for checking out Mentora.
+#### Thanks for checking out Mentora.
 
 
 
