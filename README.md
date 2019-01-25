@@ -3,7 +3,7 @@
 Mentora is a decentralized marketplace for mentorship. By directly connecting those who want to pass on knowledge and advice (mentors) with those who want to receive it (mentees), Mentora helps mentees shortcut learning curves to rapidly attain goals while providing mentors with unhindered market opportunities.
 
 ## The Mentora System
-The Mentora system is built on top of Ethereum and uses an Angular web app interface hosted on IPFS.  Utilising smart contracts to facilitate mentor/mentee relationships and interaction, Mentora eliminates the traditional middle man structure found in other learning marketplaces. This means individuals gain direct access to mentors who are eager to pass on their knowledge on their terms. There is no centralized company setting prices or siphoning off exorbitant fees from creators.
+The Mentora system is built on top of Ethereum and uses an Angular web app interface hosted on IPFS.  Utilising smart contracts to facilitate mentor/mentee relationships and interaction, Mentora eliminates the traditional middle man structure found in other learning marketplaces. This means individuals gain direct access to mentors who are eager to pass on their knowledge on their terms. There is no third party setting prices, dictating terms or siphoning off exorbitant fees.
 
 *Full Disclosure: Mentora will eventually establish fair transaction fees to help facilitate ongoing development. They will be implemented using smart contracts and therefore 100% transparent.*
 
@@ -19,17 +19,18 @@ The quickest way to attain a goal is to be mentored by someone who has already d
 
 ### Reputation
 
+Mentora's reputation system establishes a confidence score for each mentor and mentee. This score is a quantitative representation of trust. Interactions contribute to the confidence score allowing relationships between mentors/mentees to start at a mutual level of trust commesurate with their scores.  
 
+In other words, mentors don't want to waste their time and energy trying to motivate someone who doesn't really want to put in the effort needed to succeed.  Likewise, mentees don't want to waste their time and energy possibly being led in the wrong direction by a mentor who really has no clue what they are doing.  The confidence score is an attempt to highlight the good while warning about the bad.
 
-### Decentralization, Security, and Data Ownership
+### Integrations: Staking a Future on Decentralization, Cryptographic Security, and Personal Data Ownership
 
-## Integrations
-
-Mentora has several 
+At Mentora, we've 100% bought into the idea of a decentralized and cryptographically secure world.  Our ultimate goal is to eliminate any points of centralization in the system without sacrificing security or usability (understanding there's usually a tradeoff to be made there).  To that end, Mentora has several integrations that facilitate a decentralized, censorship resistant, secure platform where users can protect and maintain control over all their data and content.
 
 ### 3Box
-
+3Box is a social, peer to peer, distributed user data network that supports public and private data for Ethereum users. Each user has two data stores - one public and one private.  
 ### Inter Planetary File System (IPFS)
+
 
 ### Mentora Web Application
 
