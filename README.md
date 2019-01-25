@@ -61,7 +61,9 @@ Using IPFS, Mentora eliminates the need to store data on a central server.  The 
 
 ## Shameless Support Plug
 
-If you like what Mentora is up to and want to help speed up development - send some Eth: 0x7f7c65C084d6F6B7463AfF0e36a816567b378230
+If you like what Mentora is up to and want to help speed up development...
+
+**send some Eth: 0x7f7c65C084d6F6B7463AfF0e36a816567b378230**
 
 Thanks for checking out Mentora.
 
