@@ -66,11 +66,16 @@ export class CreateCourseComponent implements OnInit {
        this.courseModel.courseDescription = courseDescription;
        console.log(this.courseModel.courseDescription);
        this.courseModel.course3BoxName = await this.get3BoxName(this.courseModel.courseOwner);
+       console.log(this.courseModel.course3BoxName);
+       this.courseModel.courseNumber  = await this.getLastCourseNumber();
+       console.log(this.courseModel.courseNumber);
+       this.courseModel.courseNumber++;
        this.courseModel.courseInfoUrl = await this.createCourseInfoUrl(
            this.courseModel.courseTitle, 
            this.courseModel.courseDescription, 
            this.courseModel.courseOwner, 
-           this.courseModel.course3BoxName
+           this.courseModel.course3BoxName, 
+           this.courseModel.courseNumber
         );
         console.log(this.courseModel.courseInfoUrl);        
         this.courseAddition();
@@ -83,33 +88,47 @@ export class CreateCourseComponent implements OnInit {
         console.log(this.currentAccount);
         this.courseModel.courseOwner = this.currentAccount.toString();
         console.log(this.courseModel.courseOwner);
-        let deployed = await this.deployContract();
+        const deployed = await this.deployContract();
         console.log(deployed);
-        let totalSupply = await deployed.totalSupply();
-        console.log(totalSupply.toNumber());
-        this.courseModel.courseNumber = totalSupply + 1;
         const courseAddition = await deployed.mintWithCourseUri(this.courseModel.courseOwner, this.courseModel.courseNumber, this.courseModel.courseInfoUrl, {from: this.courseModel.courseOwner});
         console.log(courseAddition);
     }
 
     async get3BoxName(address) {
         const box = await this.threeBoxService.openBox(address, this.web3.currentProvider);
-        let result = await this.threeBoxService.box.public.get('name');
+        const result = await this.threeBoxService.box.public.get('name');
         return result;
     }
 
     async deployContract() {
-        let deployed;
-        deployed = await this.courses.deployed();
+        const deployed = await this.courses.deployed();
         return deployed;
     }
 
-    async createCourseInfoUrl(courseTitle, courseDescription, courseOwner, course3BoxName):Promise<string> {
+    async getLastCourseNumber() {
+        const accounts = await this.web3.eth.getAccounts();
+        console.log(accounts);
+        const deployed = await this.deployContract();
+        console.log(deployed);
+        let supply = await deployed.totalSupply();
+        supply = supply.toNumber();
+        if(supply == 0) {
+            const previousCourseNumber = 0;
+            return previousCourseNumber;
+        } else {
+            const previousCourseNumber = await deployed.getLastCourseNumber(supply);
+            console.log(previousCourseNumber);
+            return previousCourseNumber;
+        }  
+    }
+
+    async createCourseInfoUrl(courseTitle, courseDescription, courseOwner, course3BoxName, courseNumber):Promise<string> {
         var courseJson = {
             courseTitle: courseTitle,
             courseDescription: courseDescription,
             courseOwner: courseOwner,
-            course3BoxName: course3BoxName
+            course3BoxName: course3BoxName,
+            courseNumber: courseNumber
         }
         console.log(courseJson);
         let content = ipfs.types.Buffer.from(JSON.stringify(courseJson));
