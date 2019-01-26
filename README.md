@@ -1,7 +1,9 @@
 ![alt text](https://github.com/VitalPointAI/Mentora/blob/master/src/assets/mentora-logo.png "Mentora Logo")
-# Mentora
 *Mentora comes to you from Vital Point AI (which sounds like a fancy company, but is really just one person...).  Connect with me:*
-|[<img src="https://github.com/VitalPointAI/Mentora/blob/master/src/assets/linkedin-96.png">](https://www.linkedin.com/in/aaronluhning)|[<img src="https://github.com/VitalPointAI/Mentora/blob/master/src/assets/linkedin-96.png">](https://twitter.com/VitalPoint_AI)|
+[<img src="https://github.com/VitalPointAI/Mentora/blob/master/src/assets/linkedin-96.png">](https://www.linkedin.com/in/aaronluhning)[<img src="https://github.com/VitalPointAI/Mentora/blob/master/src/assets/twitter-96.png">](https://twitter.com/VitalPoint_AI)|
+
+# Mentora
+
 Mentora is a decentralized marketplace for mentorship. By directly connecting those who want to pass on knowledge and advice (mentors) with those who want to receive it (mentees), Mentora helps mentees shortcut learning curves to rapidly attain goals while providing mentors with unhindered market opportunities.
 
 ## The Mentora System
