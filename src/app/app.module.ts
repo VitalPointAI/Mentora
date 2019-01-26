@@ -30,6 +30,7 @@ import { DataService } from './util/data.service';
 import { CoursesDashboardComponent } from './hr/training/courses-dashboard/courses-dashboard.component';
 import { ViewMentorProfileComponent } from './hr/profile/view-mentor-profile/view-mentor-profile.component';
 import { MentorCourseListComponent } from './hr/profile/view-mentor-profile/mentor-course-list/mentor-course-list.component';
+import { AddReputationComponent } from './reputation/add-reputation/add-reputation.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MentorCourseListComponent } from './hr/profile/view-mentor-profile/ment
     CourseListComponent,
     CoursesDashboardComponent,
     ViewMentorProfileComponent,
-    MentorCourseListComponent
+    MentorCourseListComponent,
+    AddReputationComponent
   ],
   imports: [
     BrowserAnimationsModule,

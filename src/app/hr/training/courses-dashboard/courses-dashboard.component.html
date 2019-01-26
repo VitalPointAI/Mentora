@@ -1,7 +1,8 @@
+<h2 class="ui block centered header">There are {{ totalNumberOfCourses }} courses available so far.</h2>
 <div class="ui very padded centered grid">
         <div class="ui link cards">
         
-            <div class="card" *ngFor="let item of this.data" (click)="onSelect(item)">
+            <div class="card" *ngFor="let item of this.data" (click)="onSelect()">
                 <div class="image">
                     <img src="/assets/eth.png">
                 </div>

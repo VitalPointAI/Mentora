@@ -1,14 +1,12 @@
-<h1>Position Administration</h1>
-<h3>Total Number of {{ name }}s ({{ symbol }} ): {{ totalSupply }}</h3>
-<h4>The current account is: {{ currentAccount }} and it has {{ balanceOf }} {{ name }}s</h4>
 
-<div class="ui grid">
-        
-        <div class="four wide column"><app-attestation-interface></app-attestation-interface></div>
-        <div class="four wide column"><app-create-position></app-create-position></div>
-        <div class="four wide column"><app-create-course></app-create-course></div>
-        <div class="four wide column"><app-position-owner></app-position-owner></div>
+<div class="ui clearing segment">
+        <h5 class="ui right floated header">The current account is: {{ currentAccount }} and it has {{ balanceOf }} courses.</h5>
+    <h1 class="ui left floated header">Create a New Course</h1>
 </div>
+<div class="ui very padded centered grid">
+    <app-create-course></app-create-course>
+</div>
+
 
 <div class="ui cards">
         <div class="card" *ngFor="let event of events">

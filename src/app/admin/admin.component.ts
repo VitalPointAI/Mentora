@@ -48,16 +48,11 @@ export class AdminComponent implements OnInit {
   async getInfo() {
       await this.getName();
       await this.getSymbol();
-      await this.getTotalSupply();
       await this.getCurrentAccountBalanceOfPositions();
       await this.getAllPositionsOwnedByCurrentAccount();
-
   }
 
-  async getTotalSupply() {
-    await this.positions.deployed();
-    this.totalSupply = await this.deployedContract.totalSupply();
-  }
+  
 
   async getName() {
     await this.positions.deployed();

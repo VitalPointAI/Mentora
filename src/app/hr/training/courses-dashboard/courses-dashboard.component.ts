@@ -37,6 +37,7 @@ export class CoursesDashboardComponent implements OnInit {
 
     data: any = [];
     receivedData: [];
+    totalNumberOfCourses: number;
 
     constructor(@Inject(WEB3) private web3,
         private web3Service: Web3Service,
@@ -62,6 +63,7 @@ export class CoursesDashboardComponent implements OnInit {
           console.log(this.deployedContract);
         });
         this.getInfo();
+        this.getTotalSupply();
        
       });
       setInterval(() => this.getInfo(), 50000);
@@ -81,7 +83,11 @@ export class CoursesDashboardComponent implements OnInit {
         });
     }
 
-    
+    async getTotalSupply() {
+        await this.courses.deployed();
+        let result = await this.deployedContract.totalSupply();
+        this.totalNumberOfCourses = result.toNumber();
+    }
 
     async getInfo() {
         await this.getAllCourses();  

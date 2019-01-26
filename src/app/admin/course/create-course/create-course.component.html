@@ -1,15 +1,35 @@
-<div class="ui form">
+<div class="ui equal width massive form">
         <div class="fields">
           <div class="field">
             <label>Course Title</label>
-            <input type="text" placeholder="Course Title" id="courseTitle" (change)="setCourseTitle($event)">
+            <input placeholder="Enter a course title." 
+            id="courseTitle"
+            type="text"
+            (change)="setCourseTitle($event)"
+            >
+          </div>
+          <div class="field">
+                <label>Category</label>
+                <div class="ui selection dropdown">
+                    <input type="hidden" name="category">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Category</div>
+                    <div class="menu">
+                        <div class="item" data-value="1">Ethereum</div>
+                        <div class="item" data-value="0">Bitcoin</div>
+                    </div>
+                </div>  
           </div>
         </div>
         <div class="fields">
             <div class="field">
-                <label>Course Description</label>
-                <textarea type="text" placeholder="Course Description" id="courseDescription" (change)="setCourseDescription($event)"></textarea>
+                    <label>Course Description</label>
+                    <textarea type="text" placeholder="Course Description" id="courseDescription" (change)="setCourseDescription($event)"></textarea>
             </div>
         </div>
-        <button class="positive ui button" id="createCourse" (click)="createCourse(this.courseModel.courseTitle, this.courseModel.courseDescription)">Create Course</button>    
+        <div class="fields">
+            <div class="field">
+                <div class="ui submit button" id="createCourse" (click)="createCourse(this.courseModel.courseTitle, this.courseModel.courseDescription)">Create Course</div>
+            </div>
+        </div>
 </div>
