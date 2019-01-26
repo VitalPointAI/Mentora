@@ -1,11 +1,12 @@
 ![alt text](https://github.com/VitalPointAI/Mentora/blob/master/src/assets/mentora-logo.png "Mentora Logo")
 # Mentora
-
+*Mentora comes to you from Vital Point AI (which sounds like a fancy company, but is really just one person...).  Connect with me:*
+|[<img src="https://github.com/VitalPointAI/Mentora/blob/master/src/assets/linkedin-96.png">](https://www.linkedin.com/in/aaronluhning)|[<img src="https://github.com/VitalPointAI/Mentora/blob/master/src/assets/linkedin-96.png">](https://twitter.com/VitalPoint_AI)|
 Mentora is a decentralized marketplace for mentorship. By directly connecting those who want to pass on knowledge and advice (mentors) with those who want to receive it (mentees), Mentora helps mentees shortcut learning curves to rapidly attain goals while providing mentors with unhindered market opportunities.
 
 ## The Mentora System
 The Mentora system is built on top of Ethereum and uses an Angular web app interface hosted on IPFS.  Utilising smart contracts to facilitate mentor/mentee relationships and interaction, Mentora eliminates the traditional middle man structure found in other learning marketplaces. This means individuals gain direct access to mentors who are eager to pass on their knowledge on their terms. There is no third party setting prices, dictating terms or siphoning off exorbitant fees.
-![alt text](https://github.com/VitalPointAI/Mentora/blob/master/src/assets/mentora-logo.png "Mentora Logo")
+![alt text](https://github.com/VitalPointAI/Mentora/blob/master/src/assets/Mentora-shots.png "Mentora Screenshots")
 
 
 *Full Disclosure: Mentora will eventually establish some kind of economy or transaction fee structure to help facilitate ongoing development. Whatever it is, it will be implemented using smart contracts and therefore 100% transparent.*
