@@ -24,7 +24,7 @@ image: Object;
     }
 
     currentTestName:string;
-    clicked: false;
+    clicked: boolean;
 
 
   constructor(

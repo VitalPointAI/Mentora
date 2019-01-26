@@ -1,4 +1,3 @@
-Starting migrations...
 ======================
 > Network name:    'ropsten'
 > Network id:      3
@@ -8,22 +7,39 @@ Starting migrations...
 1_initial_migration.js
 ======================
 
-   Deploying 'Migrations'
+   Replacing 'Migrations'
    ----------------------
-   > transaction hash:    0x8cc4b4f7e98f713f67cedac26531b99fa1d6c9a14315d1cea8ab35e20321b255
-   > Blocks: 0            Seconds: 16
-   > contract address:    0x35BfeE047EDc821e1B2C1d80dDA54975693F17B2
-b
+   > transaction hash:    0x7970f3a10a1e1eb3471060a5e9c14a2ab68203ad1707325e303d4286330f8e1a
+   > Blocks: 1            Seconds: 20
+   > contract address:    0x2be48Feae27a903d38bF6056Ab71CCeEC8A7ea0c
+   > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
+   > balance:             4.80053321
+   > gas used:            221171
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00442342 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4899601)
+   > confirmation number: 2 (block: 4899602)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00442342 ETH
+
+
 2_deploy_contracts.js
 =====================
 
-   Deploying 'VPAttribute'
+   Replacing 'VPAttribute'
    -----------------------
-   > transaction hash:    0xe10519568b593a2878df1ae4749fb1483507b072305b5c6505d7f191f3f50da8
-   > Blocks: 1            Seconds: 12
-   > contract address:    0xb4Dc4378f5f63785dC9569e9e90b6618715f7FBF
+   > transaction hash:    0x4bcf8303aad34fafd2f5bfca0d91ac1d0edd45b0598199dbdfdb0a39ef6521a3
+   > Blocks: 2            Seconds: 20
+   > contract address:    0x2156D3527AD09f0565F8E5BA21D2fE5B904893EB
    > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
-   > balance:             4.97007292
+   > balance:             4.77502955
    > gas used:            1233254
    > gas price:           20 gwei
    > value sent:          0 ETH
@@ -31,16 +47,16 @@ b
 
    Pausing for 2 confirmations...
    ------------------------------
-   > confirmation number: 1 (block: 4898780)
-   > confirmation number: 2 (block: 4898781)
+   > confirmation number: 1 (block: 4899606)
+   > confirmation number: 2 (block: 4899607)
 
-   Deploying 'Position'
+   Replacing 'Position'
    --------------------
-   > transaction hash:    0x93d8c11b04f30825b53341b79bcffca79efe051dd3ad3bbe946fa64dd0036ac2
-   > Blocks: 0            Seconds: 64
-   > contract address:    0x03B4A4e25726ab25Fa2CdDcD7109EA7703c90180
+   > transaction hash:    0x66ce9f66c2419639e467c6384c0c934eeee5d41334dce7a424476d72157c7a88
+   > Blocks: 1            Seconds: 12
+   > contract address:    0x6DA714FE5b3112Aae8B4E74D92A258B7b833D1A4
    > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
-   > balance:             4.91790442
+   > balance:             4.72286105
    > gas used:            2608425
    > gas price:           20 gwei
    > value sent:          0 ETH
@@ -48,16 +64,16 @@ b
 
    Pausing for 2 confirmations...
    ------------------------------
-   > confirmation number: 1 (block: 4898783)
-   > confirmation number: 2 (block: 4898784)
+   > confirmation number: 1 (block: 4899609)
+   > confirmation number: 2 (block: 4899610)
 
-   Deploying 'Course'
+   Replacing 'Course'
    ------------------
-   > transaction hash:    0x9dd9a736da5e3699b3da94980cd5dac81bc6f5559af76cd17d796aa90bdad291
-   > Blocks: 1            Seconds: 8
-   > contract address:    0x4feA606f4a3739d928e3b4760256743f30349DE8
+   > transaction hash:    0x200399fcfb47dfb72d182c455f917036ce8f1d8c0f357de644fbb4858a880f3b
+   > Blocks: 2            Seconds: 144
+   > contract address:    0xEd8295d91dA6113130aF5548fF8CB547037261c6
    > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
-   > balance:             4.88091498
+   > balance:             4.68587161
    > gas used:            1849472
    > gas price:           20 gwei
    > value sent:          0 ETH
@@ -65,16 +81,16 @@ b
 
    Pausing for 2 confirmations...
    ------------------------------
-   > confirmation number: 1 (block: 4898787)
-   > confirmation number: 2 (block: 4898788)
+   > confirmation number: 1 (block: 4899613)
+   > confirmation number: 2 (block: 4899614)
 
-   Deploying 'ObjectLib'
+   Replacing 'ObjectLib'
    ---------------------
-   > transaction hash:    0x98200260b895e33fc5c6557680b4b2870ef962b2af8e7650183d820311cc1b7e
-   > Blocks: 1            Seconds: 8
-   > contract address:    0x03D5f878e0e16e1D2Ed3F754Fb963c125027f3B3
+   > transaction hash:    0xb59534574381a683631439cbe6469a8e2b2bae295f0d7286f599c4377e733b6c
+   > Blocks: 1            Seconds: 32
+   > contract address:    0x59b1b245d01212c700E8D91309deF5efD4f1E79b
    > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
-   > balance:             4.87941746
+   > balance:             4.68437409
    > gas used:            74876
    > gas price:           20 gwei
    > value sent:          0 ETH
@@ -82,16 +98,16 @@ b
 
    Pausing for 2 confirmations...
    ------------------------------
-   > confirmation number: 1 (block: 4898790)
-   > confirmation number: 2 (block: 4898791)
+   > confirmation number: 1 (block: 4899616)
+   > confirmation number: 2 (block: 4899617)
 
-   Deploying 'ERC721XTokenNFT'
+   Replacing 'ERC721XTokenNFT'
    ---------------------------
-   > transaction hash:    0x721853cecec76df7eacbe16d9e7f62857e81fc16e3670bc7a2d281bf9419357e
-   > Blocks: 0            Seconds: 12
-   > contract address:    0xC6BcdFC8c403aB186cb8A9A224D27C26E03094Dd
+   > transaction hash:    0xa6103575724d5128d8f41e3ee74aea3d89d56020d83874d412face2482dbf887
+   > Blocks: 0            Seconds: 20
+   > contract address:    0x2fBc57459Cd8631101d603F3140d7fDCF859c2bD
    > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
-   > balance:             4.85416694
+   > balance:             4.65912357
    > gas used:            1262526
    > gas price:           20 gwei
    > value sent:          0 ETH
@@ -99,16 +115,15 @@ b
 
    Pausing for 2 confirmations...
    ------------------------------
-   > confirmation number: 1 (block: 4898792)
-   > confirmation number: 2 (block: 4898793)
+   > confirmation number: 2 (block: 4899620)
 
-   Deploying 'ERC721XToken'
+   Replacing 'ERC721XToken'
    ------------------------
-   > transaction hash:    0x43264c7861f804a13628bf3d65a5da5312ca046d8dedc496d9010781748551d3
-   > Blocks: 0            Seconds: 16
-   > contract address:    0xBc230338C8d25c3489829ce3fdD01Fa06421942E
+   > transaction hash:    0xe19c3e2f471563455ed538bceb1111a5e1d1a6ae46e68b86cd27b60d554121fa
+   > Blocks: 1            Seconds: 28
+   > contract address:    0x6345d2cfe8d629701Dd7C16a13a4a913f7c26A62
    > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
-   > balance:             4.80596704
+   > balance:             4.61092367
    > gas used:            2409995
    > gas price:           20 gwei
    > value sent:          0 ETH
@@ -116,8 +131,8 @@ b
 
    Pausing for 2 confirmations...
    ------------------------------
-   > confirmation number: 1 (block: 4898795)
-   > confirmation number: 2 (block: 4898796)
+   > confirmation number: 1 (block: 4899622)
+   > confirmation number: 2 (block: 4899623)
 
    > Saving migration to chain.
    > Saving artifacts

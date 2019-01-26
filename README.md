@@ -63,7 +63,10 @@ Using IPFS, Mentora eliminates the need to store data on a central server.  The 
 11.  At this point, the application is setup, running and you can interact with it.  Please refer to the provided [project evaluation notes](https://github.com/VitalPointAI/Mentora/blob/master/docs/project_evaluation.md)
 
 ### Running from Rinkeby/IPFS
-in progress
+
+**Please Note - if running the application from here, be patient when submitting requests.  I do not currently have "Loading..." indicators configured.  It takes some time for Infura/Ropsten to finish transactions.  Not as quick as the localhost setup above.
+
+
 
 ## Shameless Support Plug
 

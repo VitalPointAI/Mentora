@@ -7,9 +7,13 @@ import { WEB3 } from './../../../web3';
 
 declare let require: any;
 const course_artifacts = require('./../../../../../build/contracts/Course.json');
+//require('dotenv').config() //Store environment specific variable from .env to process.env
 
 const ipfsAPI = require('ipfs-http-client');
 const ipfs = ipfsAPI('localhost', '5001');
+const infuraIpfs = ipfsAPI({host: 'ipfs.infura.io', port: '5001', protocol: 'https'});
+
+
 
 @Component({
   selector: 'app-course-list',
@@ -46,11 +50,20 @@ export class CourseListComponent implements OnInit {
 
     ngOnInit() {
         console.log(this);
+        const network = this.web3.eth.net.getId().then(console.log);
+
+        if (network=='5777') {
         //Connect with IPFS node
         ipfs.id(function(err, res) {
             if (err) throw err
             console.log('Connected to IPFS node!', res.id, res.agentVersion, res.protocolVersion);
             });
+        } else {
+        infuraIpfs.id(function(err, res) {
+            if (err) throw err
+            console.log('Connected to IPFS node!', res.id, res.agentVersion, res.protocolVersion);
+            });
+        }
         
         //Get access to courses contract methods
         this.web3Service.artifactsToContract(course_artifacts)

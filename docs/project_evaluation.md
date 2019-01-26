@@ -61,7 +61,7 @@ Yes - [avoiding_common_attacks](https://github.com/VitalPointAI/Mentora/blob/mas
 Yes - I believe it does.  Document at para 17.
 
 ### 19. Project includes a deployed_addresses.txt that describes where the deployed testnet contracts live.
-in progress
+Yes - Ropsten network -> [deployed_addresses.txt](https://github.com/VitalPointAI/Mentora/blob/master/docs/deployed_addresses.txt)
 
 ### 20. Project uses IPFS
 Yes - check the console when adding a course.  If you set things up using instructions in readme and have an IPFS node running, you'll see it connect to the node and push course data into a JSON file hosted on IPFS.  The web app then calls that information to populate data in relevant components.

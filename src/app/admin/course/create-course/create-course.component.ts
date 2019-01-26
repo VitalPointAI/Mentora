@@ -8,6 +8,7 @@ const course_artifacts = require('./../../../../../build/contracts/Course.json')
 
 const ipfsAPI = require('ipfs-http-client');
 const ipfs = ipfsAPI('localhost', '5001');
+const infuraIpfs = ipfsAPI({host: 'ipfs.infura.io', port: '5001', protocol: 'https'});
 
 @Component({
   selector: 'app-create-course',
@@ -39,12 +40,20 @@ export class CreateCourseComponent implements OnInit {
     ngOnInit() {
         console.log(this);
         
+        const network = this.web3.eth.net.getId().then(console.log);
+
+        if (network=='5777') {
         //Connect with IPFS node
         ipfs.id(function(err, res) {
             if (err) throw err
             console.log('Connected to IPFS node!', res.id, res.agentVersion, res.protocolVersion);
             });
-        
+        } else {
+        infuraIpfs.id(function(err, res) {
+            if (err) throw err
+            console.log('Connected to IPFS node!', res.id, res.agentVersion, res.protocolVersion);
+            });
+        }
         //Get access to courses contract methods
         this.web3Service.artifactsToContract(course_artifacts)
         .then((courseAbstraction) => {
@@ -131,11 +140,23 @@ export class CreateCourseComponent implements OnInit {
             courseNumber: courseNumber
         }
         console.log(courseJson);
-        let content = ipfs.types.Buffer.from(JSON.stringify(courseJson));
-        let results = await ipfs.add(content);
-        let hash = results[0].hash;
-        console.log('creating course:', courseJson.courseTitle, hash);
-        return ("http://localhost:8080/ipfs/" + hash);
+        const network = this.web3.eth.net.getId().then(console.log);
+
+        if (network=='5777') {
+            const ipfsEndPoint = "http://localhost:8080/ipfs";
+            let content = ipfs.types.Buffer.from(JSON.stringify(courseJson));
+            let results = await ipfs.add(content);
+            let hash = results[0].hash;
+            console.log('creating course:', courseJson.courseTitle, hash);
+            return (ipfsEndPoint + hash);
+        } else {
+            const ipfsEndPoint = "https://ipfs.infura.io/ipfs/";
+            let content = infuraIpfs.types.Buffer.from(JSON.stringify(courseJson));
+            let results = await infuraIpfs.add(content);
+            let hash = results[0].hash;
+            console.log('creating course:', courseJson.courseTitle, hash);
+            return (ipfsEndPoint + hash);
+        }
     }
 
     //FORM CONTROLS

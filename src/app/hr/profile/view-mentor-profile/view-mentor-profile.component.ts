@@ -45,9 +45,6 @@ image: Object;
     }
 
     async openAccount() {
-        //const accounts = await this.web3.eth.getAccounts();
-       // this.publicProfileModel.currentAccount = profileAddress;
-       // console.log(this.publicProfileModel.currentAccount);
         const box = await this.threeBoxService.openBox(this.publicDetailProfileModel.currentAccount, this.web3.currentProvider);
         this.publicDetailProfileModel.name = await this.threeBoxService.box.public.get('name');
         const profileImage = await this.threeBoxService.box.public.get('image');
