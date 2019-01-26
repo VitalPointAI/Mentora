@@ -1,5 +1,7 @@
 ![alt text](https://github.com/VitalPointAI/Mentora/blob/master/src/assets/mentora-logo.png "Mentora Logo")
+
 *Mentora comes to you from Vital Point AI (which sounds like a fancy company, but is really just one person...).  Connect with me:*
+
 [<img src="https://github.com/VitalPointAI/Mentora/blob/master/src/assets/linkedin-96.png">](https://www.linkedin.com/in/aaronluhning)[<img src="https://github.com/VitalPointAI/Mentora/blob/master/src/assets/twitter-96.png">](https://twitter.com/VitalPoint_AI)|
 
 # Mentora
