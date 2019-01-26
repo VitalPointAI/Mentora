@@ -75,7 +75,7 @@ export class CoursesDashboardComponent implements OnInit {
           console.log(this.deployedContract);
         });
         this.getInfo();
-        this.getTotalSupply();
+        
        
       });
       setInterval(() => this.getInfo(), 50000);
@@ -103,6 +103,7 @@ export class CoursesDashboardComponent implements OnInit {
 
     async getInfo() {
         await this.getAllCourses();  
+        await this.getTotalSupply();
     }
 
     setStatus(status) {

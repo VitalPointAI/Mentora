@@ -47,9 +47,9 @@ export class AdminComponent implements OnInit {
 
   async getInfo() {
       await this.getName();
-      await this.getSymbol();
+     // await this.getSymbol();
       await this.getCurrentAccountBalanceOfPositions();
-      await this.getAllPositionsOwnedByCurrentAccount();
+    //  await this.getAllPositionsOwnedByCurrentAccount();
   }
 
   
@@ -87,6 +87,9 @@ export class AdminComponent implements OnInit {
 
     console.log(this.events);
   }
+
+  
+
 
   
   

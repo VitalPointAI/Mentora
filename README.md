@@ -5,8 +5,10 @@ Mentora is a decentralized marketplace for mentorship. By directly connecting th
 
 ## The Mentora System
 The Mentora system is built on top of Ethereum and uses an Angular web app interface hosted on IPFS.  Utilising smart contracts to facilitate mentor/mentee relationships and interaction, Mentora eliminates the traditional middle man structure found in other learning marketplaces. This means individuals gain direct access to mentors who are eager to pass on their knowledge on their terms. There is no third party setting prices, dictating terms or siphoning off exorbitant fees.
+![alt text](https://github.com/VitalPointAI/Mentora/blob/master/src/assets/mentora-logo.png "Mentora Logo")
 
-*Full Disclosure: Mentora will eventually establish fair transaction fees to help facilitate ongoing development. They will be implemented using smart contracts and therefore 100% transparent.*
+
+*Full Disclosure: Mentora will eventually establish some kind of economy or transaction fee structure to help facilitate ongoing development. Whatever it is, it will be implemented using smart contracts and therefore 100% transparent.*
 
 Mentora is aiming to provide opportunities for both mentors and mentees:
 
@@ -62,11 +64,16 @@ Using IPFS, Mentora eliminates the need to store data on a central server.  The 
 10.  If you're connected to the Ganache chain, you'll see the app show up.  MetaMask will ask you to sign a couple transactions to allow access to 3Box. This is so you can setup profiles. (allows Mentora to display relevant information from your profile, add you to add relevant information to your profile and let you interact with human readable names instead of Ethereum addresses).
 11.  At this point, the application is setup, running and you can interact with it.  Please refer to the provided [project evaluation notes](https://github.com/VitalPointAI/Mentora/blob/master/docs/project_evaluation.md)
 
-### Running from Rinkeby/IPFS
+### Running from Ropsten/IPFS
 
-**Please Note - if running the application from here, be patient when submitting requests.  I do not currently have "Loading..." indicators configured.  It takes some time for Infura/Ropsten to finish transactions.  Not as quick as the localhost setup above.
+**Please Note - if running the application from here, be patient when submitting requests.  I do not currently have "Loading..." indicators configured.  It takes some time for Infura/Ropsten to finish transactions.  Not as quick as the localhost setup above.  As well, I've been having problems getting Infura to load the site through its IPFS gateway.  I HIGHLY recommend setting it up locally vice trying to run from IPFS/Ropsten for the best performance.
 
+1. Ensure MetaMask is set to Ropsten network
+2. Ensure you have a couple Ropsten accounts with some test [Ether](https://faucet.metamask.io/)
+3. Either set things up locally and connec to the Ropsten network or you can try https://gateway.ipfs.io/ipns/QmUixLdxza2GFGg9HrSVVCGsQpC8LT8fCLN8hgKE26SUPy (not sure if it's the size of the app, but the deployment to IPFS hasn't been playing nice.)
+4. At this point, things should be good to go. Please refer to the provided [project evaluation notes](https://github.com/VitalPointAI/Mentora/blob/master/docs/project_evaluation.md)
 
+Thanks for reviewing.
 
 ## Shameless Support Plug
 

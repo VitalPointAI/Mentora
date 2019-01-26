@@ -1,0 +1,21 @@
+<div class="ui equal width massive form">
+        <div class="fields">
+          <div class="field">
+            <label>Delete a Course</label>
+            <input placeholder="Enter a course number to delete." 
+            id="courseTitle"
+            type="text"
+            (change)="setCourseNumber($event)"
+            >
+          </div>
+          
+        </div>
+        
+        <div class="fields">
+            <div class="field">
+                <div class="ui submit button" id="createCourse" (click)="deleteCourse()">Delete Course</div>
+            </div>
+        </div>
+</div>
+
+

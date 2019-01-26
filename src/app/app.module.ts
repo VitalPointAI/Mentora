@@ -31,6 +31,7 @@ import { CoursesDashboardComponent } from './hr/training/courses-dashboard/cours
 import { ViewMentorProfileComponent } from './hr/profile/view-mentor-profile/view-mentor-profile.component';
 import { MentorCourseListComponent } from './hr/profile/view-mentor-profile/mentor-course-list/mentor-course-list.component';
 import { AddReputationComponent } from './reputation/add-reputation/add-reputation.component';
+import { DeleteCourseComponent } from './admin/course/delete-course/delete-course.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AddReputationComponent } from './reputation/add-reputation/add-reputati
     CoursesDashboardComponent,
     ViewMentorProfileComponent,
     MentorCourseListComponent,
-    AddReputationComponent
+    AddReputationComponent,
+    DeleteCourseComponent
   ],
   imports: [
     BrowserAnimationsModule,

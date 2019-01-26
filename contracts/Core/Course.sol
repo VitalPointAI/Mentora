@@ -1,16 +1,16 @@
 pragma solidity ^0.5.0;
 
 import "./../../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol";
-import "./../../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol";
 import "./../../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Metadata.sol";
 import "./../../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Enumerable.sol";
 import "./../../node_modules/openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
+import "./../../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Burnable.sol";
 
 /// @title VP Course
 /// @author Vital Point AI (Aaron Luhning)
 /// @notice Contract that extends ERC721 to issue NFTs to represent courses in the system
 
-contract Course is Pausable, ERC721Enumerable, ERC721Metadata, ERC721Full, ERC721Mintable  {
+contract Course is ERC721Burnable, Pausable, ERC721Enumerable, ERC721Metadata, ERC721Full  {
 
     constructor(
     ) 
@@ -33,7 +33,7 @@ contract Course is Pausable, ERC721Enumerable, ERC721Metadata, ERC721Full, ERC72
     /// @param _tokenURI - uri to offchain data stored on IPFS associated with this course
     /// @dev creates a new course, attributing it to an owner and pointing to off chain data
 
-    function mintWithCourseUri(address _to, uint256 _tokenId, string calldata _tokenURI) external onlyMinter returns (bool) {
+    function mintWithCourseUri(address _to, uint256 _tokenId, string calldata _tokenURI) external returns (bool) {
         
         _mint(_to, _tokenId);
         _setTokenURI(_tokenId, _tokenURI);

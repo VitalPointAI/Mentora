@@ -1,7 +1,6 @@
 import {Component, OnInit, Inject} from '@angular/core';
 import {Web3Service} from './../../../util/web3.service';
 import { WEB3 } from './../../../web3';
-import { ThreeBox } from './../../../3box/3box.service';
 
 declare let require: any;
 const course_artifacts = require('./../../../../../build/contracts/Course.json');
@@ -11,15 +10,16 @@ const ipfs = ipfsAPI('localhost', '5001');
 const infuraIpfs = ipfsAPI({host: 'ipfs.infura.io', port: '5001', protocol: 'https'});
 
 @Component({
-  selector: 'app-create-course',
-  templateUrl: './create-course.component.html',
-  styleUrls: ['./create-course.component.css']
+  selector: 'app-delete-course',
+  templateUrl: './delete-course.component.html',
+  styleUrls: ['./delete-course.component.css']
 })
-export class CreateCourseComponent implements OnInit {
+export class DeleteCourseComponent implements OnInit {
 
     courses:any;
     deployedContract:any;
     deployed:any;
+    courseToDelete:number;
 
     courseModel = {
         courseTitle: '',
@@ -33,13 +33,11 @@ export class CreateCourseComponent implements OnInit {
     currentAccount: any;
 
     constructor(@Inject(WEB3) private web3,
-        private web3Service: Web3Service,
-        private threeBoxService: ThreeBox
+        private web3Service: Web3Service
     ) { }
 
     ngOnInit() {
         console.log(this);
-        
         const network = this.web3.eth.net.getId().then(console.log);
 
         if (network=='5777') {
@@ -54,6 +52,7 @@ export class CreateCourseComponent implements OnInit {
             console.log('Connected to IPFS node!', res.id, res.agentVersion, res.protocolVersion);
             });
         }
+       
         //Get access to courses contract methods
         this.web3Service.artifactsToContract(course_artifacts)
         .then((courseAbstraction) => {
@@ -66,35 +65,7 @@ export class CreateCourseComponent implements OnInit {
       });
     }
 
-    async createCourse(courseTitle, courseDescription) {
-       const accounts = await this.web3.eth.getAccounts();
-       this.currentAccount = accounts[0];
-       this.courseModel.courseOwner = this.currentAccount.toString();
-       this.courseModel.courseTitle = courseTitle;
-       console.log(this.courseModel.courseTitle);
-       this.courseModel.courseDescription = courseDescription;
-       console.log(this.courseModel.courseDescription);
-       this.courseModel.course3BoxName = await this.get3BoxName(this.courseModel.courseOwner);
-       if(this.courseModel.course3BoxName=='') {
-           this.courseModel.course3BoxName='Awesome Mentor';
-       }
-       console.log(this.courseModel.course3BoxName);
-       this.courseModel.courseNumber  = await this.getLastCourseNumber();
-       console.log(this.courseModel.courseNumber);
-       this.courseModel.courseNumber++;
-       this.courseModel.courseInfoUrl = await this.createCourseInfoUrl(
-           this.courseModel.courseTitle, 
-           this.courseModel.courseDescription, 
-           this.courseModel.courseOwner, 
-           this.courseModel.course3BoxName, 
-           this.courseModel.courseNumber
-        );
-        console.log(this.courseModel.courseInfoUrl);        
-        this.courseAddition();
-        
-    }
-
-    async courseAddition(){
+    async deleteCourse(){
         const accounts = await this.web3.eth.getAccounts();
         this.currentAccount = accounts[0];
         console.log(this.currentAccount);
@@ -102,39 +73,17 @@ export class CreateCourseComponent implements OnInit {
         console.log(this.courseModel.courseOwner);
         const deployed = await this.deployContract();
         console.log(deployed);
-        const courseAddition = await deployed.mintWithCourseUri(this.courseModel.courseOwner, this.courseModel.courseNumber, this.courseModel.courseInfoUrl, {from: this.courseModel.courseOwner});
-        console.log(courseAddition);
-    }
-
-    async get3BoxName(address) {
-        const box = await this.threeBoxService.openBox(address, this.web3.currentProvider);
-        const result = await this.threeBoxService.box.public.get('name');
-        return result;
+       // const deleteCourseInfoUrl = await deleteCourseInfoUrl(this.courseToDelete);
+        const courseDeletion = await deployed.burn(this.courseToDelete, {from: this.courseModel.courseOwner});
+        console.log(courseDeletion);
     }
 
     async deployContract() {
         const deployed = await this.courses.deployed();
         return deployed;
     }
-
-    async getLastCourseNumber() {
-        const accounts = await this.web3.eth.getAccounts();
-        console.log(accounts);
-        const deployed = await this.deployContract();
-        console.log(deployed);
-        let supply = await deployed.totalSupply();
-        supply = supply.toNumber();
-        if(supply == 0) {
-            const previousCourseNumber = 0;
-            return previousCourseNumber;
-        } else {
-            const previousCourseNumber = await deployed.getLastCourseNumber(supply);
-            console.log(previousCourseNumber);
-            return previousCourseNumber;
-        }  
-    }
-
-    async createCourseInfoUrl(courseTitle, courseDescription, courseOwner, course3BoxName, courseNumber):Promise<string> {
+/*
+    async deleteCourseInfoUrl(courseNumberToDelete):Promise<string> {
         var courseJson = {
             courseTitle: courseTitle,
             courseDescription: courseDescription,
@@ -161,17 +110,9 @@ export class CreateCourseComponent implements OnInit {
             return (ipfsEndPoint + hash);
         }
     }
-
-    //FORM CONTROLS
-
-    setCourseTitle(e) {
-        console.log('Setting course title: ' + e.target.value);
-        this.courseModel.courseTitle = e.target.value;
-    }
-    setCourseDescription(e) {
-        console.log('Setting course description: ' + e.target.value);
-        this.courseModel.courseDescription = e.target.value;
-    }
-
-
+*/
+  setCourseNumber(e) {
+    console.log('Setting course number for deletion: ' + e.target.value);
+    this.courseToDelete = e.target.value;
+}
 }

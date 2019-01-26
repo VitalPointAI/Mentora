@@ -2,6 +2,8 @@
 
 Greetings and welcome to my final project for the Consensys Blockchain Developer Program.  In an effort to make your evaluation of my project easier and to potentially answer some questions you may have, I've included this checklist of the requirements along with my comments and demo instructions for how to use the app.
 
+Not everything in the Dapp is fully functional.  For instance, if deleting a course you add, it will be deleted from the solidty backend, but I haven't implemented the function to remove it from IPFS, so it will still show up in the courses list (although number of courses indicated at top will go down).  If something doesn't look right, try hitting refresh - sometimes data takes a bit to show up.  These issues are more noticeable when connected to Ropsten - localhost is much faster. Will have to address this in future from a useability perspective.
+
 If something still isn't clear regarding whether I've fulfilled a requirement, please contact me and I'll be more than happy to provide additional clarification.
 
 ## Project Evaluation Requirements
