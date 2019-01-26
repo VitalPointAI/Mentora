@@ -1,16 +1,16 @@
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
-/// @title VP Reputation
+/// @title VP Attribution
 /// @author Vital Point AI (Aaron Luhning)
-/// @notice Contract used to attribute a hash of reputation information 
+/// @notice Contract used to attribute a hash of information 
 ///         to a specific address (owner).
 
-contract Reputation {
+contract VPAttribute {
 
     /// TYPE DECLARATIONS
 
-    // Associates hash with with attestation information
+    // Associates hash with attestation information
     mapping(uint256 => Attestation) public hashToAttestation;
     mapping(address => Attestation) attestations;
     address[] public attestationIssuerAccounts;
@@ -32,8 +32,6 @@ contract Reputation {
 
     uint256 public attestationCounter;
     
-    
-
     /// EVENTS
 
     event AttestationAdded(address indexed attestationCreator, string attestationId, uint256 attestationHash);
