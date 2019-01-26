@@ -44,6 +44,8 @@ Using IPFS, Mentora eliminates the need to store data on a central server.  The 
 
 ### WARNING: Mentora is not yet encrypting content data being stored on IPFS.  Do not add anything you potentially do not want other people to see.
 
+**Evaluators - after setting things up below, please refer to the provided [project evaluation notes](https://github.com/VitalPointAI/Mentora/blob/master/docs/project_evaluation.md)**
+
 ### Running from localhost
 1.  Clone the repo to a project folder on your computer
 2.  Run `npm install` from that project folder
@@ -58,9 +60,10 @@ Using IPFS, Mentora eliminates the need to store data on a central server.  The 
 8.  Import at least two accounts from your Ganache blockchain into MetaMask. (Recommend naming one Mentor and the other Mentee)
 9.  Run `ng serve --open` from the project directory.  This will start up a server and open a Chrome tab.
 10.  If you're connected to the Ganache chain, you'll see the app show up.  MetaMask will ask you to sign a couple transactions to allow access to 3Box. This is so you can setup profiles. (allows Mentora to display relevant information from your profile, add you to add relevant information to your profile and let you interact with human readable names instead of Ethereum addresses).
-11.  At this point, the application is setup, running and you can interact with it.  Would suggest following the demo instructions below to get an idea of what it is currently capable of.
+11.  At this point, the application is setup, running and you can interact with it.  Please refer to the provided [project evaluation notes](https://github.com/VitalPointAI/Mentora/blob/master/docs/project_evaluation.md)
 
 ### Running from Rinkeby/IPFS
+in progress
 
 ## Shameless Support Plug
 
