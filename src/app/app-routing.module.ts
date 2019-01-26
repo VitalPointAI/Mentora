@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     },
     { path: 'admin', component: AdminComponent },
     { path: '',
-      redirectTo: '/',
+      redirectTo: '/courses',
       pathMatch: 'full'
     }
   ];
