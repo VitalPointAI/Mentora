@@ -1,0 +1,131 @@
+Starting migrations...
+======================
+> Network name:    'ropsten'
+> Network id:      3
+> Block gas limit: 8000000
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x8cc4b4f7e98f713f67cedac26531b99fa1d6c9a14315d1cea8ab35e20321b255
+   > Blocks: 0            Seconds: 16
+   > contract address:    0x35BfeE047EDc821e1B2C1d80dDA54975693F17B2
+b
+2_deploy_contracts.js
+=====================
+
+   Deploying 'VPAttribute'
+   -----------------------
+   > transaction hash:    0xe10519568b593a2878df1ae4749fb1483507b072305b5c6505d7f191f3f50da8
+   > Blocks: 1            Seconds: 12
+   > contract address:    0xb4Dc4378f5f63785dC9569e9e90b6618715f7FBF
+   > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
+   > balance:             4.97007292
+   > gas used:            1233254
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.02466508 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4898780)
+   > confirmation number: 2 (block: 4898781)
+
+   Deploying 'Position'
+   --------------------
+   > transaction hash:    0x93d8c11b04f30825b53341b79bcffca79efe051dd3ad3bbe946fa64dd0036ac2
+   > Blocks: 0            Seconds: 64
+   > contract address:    0x03B4A4e25726ab25Fa2CdDcD7109EA7703c90180
+   > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
+   > balance:             4.91790442
+   > gas used:            2608425
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0521685 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4898783)
+   > confirmation number: 2 (block: 4898784)
+
+   Deploying 'Course'
+   ------------------
+   > transaction hash:    0x9dd9a736da5e3699b3da94980cd5dac81bc6f5559af76cd17d796aa90bdad291
+   > Blocks: 1            Seconds: 8
+   > contract address:    0x4feA606f4a3739d928e3b4760256743f30349DE8
+   > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
+   > balance:             4.88091498
+   > gas used:            1849472
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03698944 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4898787)
+   > confirmation number: 2 (block: 4898788)
+
+   Deploying 'ObjectLib'
+   ---------------------
+   > transaction hash:    0x98200260b895e33fc5c6557680b4b2870ef962b2af8e7650183d820311cc1b7e
+   > Blocks: 1            Seconds: 8
+   > contract address:    0x03D5f878e0e16e1D2Ed3F754Fb963c125027f3B3
+   > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
+   > balance:             4.87941746
+   > gas used:            74876
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00149752 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4898790)
+   > confirmation number: 2 (block: 4898791)
+
+   Deploying 'ERC721XTokenNFT'
+   ---------------------------
+   > transaction hash:    0x721853cecec76df7eacbe16d9e7f62857e81fc16e3670bc7a2d281bf9419357e
+   > Blocks: 0            Seconds: 12
+   > contract address:    0xC6BcdFC8c403aB186cb8A9A224D27C26E03094Dd
+   > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
+   > balance:             4.85416694
+   > gas used:            1262526
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.02525052 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4898792)
+   > confirmation number: 2 (block: 4898793)
+
+   Deploying 'ERC721XToken'
+   ------------------------
+   > transaction hash:    0x43264c7861f804a13628bf3d65a5da5312ca046d8dedc496d9010781748551d3
+   > Blocks: 0            Seconds: 16
+   > contract address:    0xBc230338C8d25c3489829ce3fdD01Fa06421942E
+   > account:             0x837d69379eDA7AB4F147abDb298A3782a041B2b1
+   > balance:             4.80596704
+   > gas used:            2409995
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0481999 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4898795)
+   > confirmation number: 2 (block: 4898796)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.18877096 ETH
+
+
+Summary
+=======
+> Total deployments:   7
+> Final cost:          0.19319438 ETH
