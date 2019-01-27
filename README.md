@@ -54,13 +54,19 @@ Using IPFS, Mentora eliminates the need to store data on a central server.  The 
 
 **Evaluators - after setting things up below, please refer to the provided [project evaluation notes](https://github.com/VitalPointAI/Mentora/blob/master/docs/project_evaluation.md)**
 
+To run from localhost, make sure you have truffle and angular installed globally:
+`npm install -g truffle`
+`npm install -g @angular/cli`
+
 ### Running from localhost
 1.  Clone the repo to a project folder on your computer
 2.  Run `npm install` from that project folder
 3.  Ensure Ganache is running
+4.  `truffle migrate`
+5.  `truffle test`
 4.  Get an IPFS daemon running (follow instructions on https://ipfs.io:
-   Run the following two config commands before starting the daemon:
-   `ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '[\"*\"]'`
+   Run the following config commands before starting the daemon:
+   `ipfs config --json API.HTTPHeaders '{"Access-Control-Allow-Origin": ["*"]}'`
    `ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '[\"PUT\", \"GET\", \"POST\"]'`
 5.  Start an IPFS daemon running on default ports.  Gateway on port 8080/API server on port 5001.  
 6.  Ensure you have MetaMask installed in your Chrome browser
@@ -75,9 +81,11 @@ Using IPFS, Mentora eliminates the need to store data on a central server.  The 
 **Please Note - if running the application from here, be patient when submitting requests.  I do not currently have "Loading..." indicators configured.  It takes some time for Infura/Ropsten to finish transactions.  Not as quick as the localhost setup above.  As well, I've been having problems getting Infura to load the site through its IPFS gateway.  I HIGHLY recommend setting it up locally vice trying to run from IPFS/Ropsten for the best performance.
 
 1. Ensure MetaMask is set to Ropsten network
-2. Ensure you have a couple Ropsten accounts with some test [Ether](https://faucet.metamask.io/)
-3. Either set things up locally and connec to the Ropsten network or you can try https://gateway.ipfs.io/ipns/QmUixLdxza2GFGg9HrSVVCGsQpC8LT8fCLN8hgKE26SUPy (not sure if it's the size of the app, but the deployment to IPFS hasn't been playing nice.)
-4. At this point, things should be good to go. Please refer to the provided [project evaluation notes](https://github.com/VitalPointAI/Mentora/blob/master/docs/project_evaluation.md)
+2. `truffle migrate --network ropsten`
+3. You'll need to create a .env file with your Infura key and 12 word mnemonic.
+4. Ensure you have a couple Ropsten accounts with some test [Ether](https://faucet.metamask.io/)
+5. Either set things up locally and connect to the Ropsten network or you can try https://gateway.ipfs.io/ipns/QmUixLdxza2GFGg9HrSVVCGsQpC8LT8fCLN8hgKE26SUPy (not sure if it's the size of the app, but the deployment to IPFS hasn't been playing nice.)
+6. At this point, things should be good to go. Please refer to the provided [project evaluation notes](https://github.com/VitalPointAI/Mentora/blob/master/docs/project_evaluation.md)
 
 Thanks for reviewing.
 
