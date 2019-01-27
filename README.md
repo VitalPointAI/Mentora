@@ -62,12 +62,11 @@ To run from localhost, make sure you have truffle and angular installed globally
 1.  Clone the repo to a project folder on your computer
 2.  Run `npm install` from that project folder
 3.  Ensure Ganache is running
-4.  `truffle migrate`
-5.  `truffle test`
+4.  Run `truffle migrate`
+5.  Run `truffle test`
 4.  Get an IPFS daemon running (follow instructions on https://ipfs.io:
    Run the following config commands before starting the daemon:
    `ipfs config --json API.HTTPHeaders '{"Access-Control-Allow-Origin": ["*"]}'`
-   `ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '[\"PUT\", \"GET\", \"POST\"]'`
 5.  Start an IPFS daemon running on default ports.  Gateway on port 8080/API server on port 5001.  
 6.  Ensure you have MetaMask installed in your Chrome browser
 7.  Connect MetaMask to the locally running blockchain (custom RPC - usually `http://127.0.0.1:7545`)
